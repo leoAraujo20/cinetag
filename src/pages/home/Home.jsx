@@ -1,6 +1,8 @@
+import Header from "@/components/Header";
+
 function Home() {
     return (
-        <p>Pagina home</p>
+        <Header />
     )
 }
 
