@@ -1,14 +1,27 @@
-import Banner from '@/components/Banner';
-import Footer from '@/components/Footer/Footer';
-import Header from '@/components/Header';
-import Title from '@/components/Title';
+import Banner from "@/components/Banner";
+import Card from "@/components/Card";
+import Footer from "@/components/Footer/Footer";
+import Header from "@/components/Header";
+import Title from "@/components/Title";
+import films from "@/mocks/db.json";
+import styles from "./Home.module.css";
 
 function Home() {
   return (
     <>
       <Header />
-      <Banner image='/images/banner-home.png' />
-      <Title><h1>Um lugar para salvar seus filmes</h1></Title>
+      <Banner image="/images/banner-home.png" />
+      <Title>
+        <h1>Um lugar para salvar seus filmes</h1>
+      </Title>
+      <section className={styles.cards}>
+        {films.map((film) => (
+          <Card
+            key={film.id}
+            {...film}
+          />
+        ))}
+      </section>
       <Footer />
     </>
   );

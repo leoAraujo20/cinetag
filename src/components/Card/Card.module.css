@@ -1,0 +1,17 @@
+.card {
+  width: 202px;
+  margin-top: 5em;
+  background-color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.coverImage {
+  width: 100%;
+}
+
+.favorite {
+  width: 24px;
+  height: 24px;
+}
