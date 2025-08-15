@@ -1,5 +1,5 @@
 .card {
-  width: 202px;
+  width: 282px;
   margin-top: 5em;
   background-color: var(--gray);
   display: flex;
@@ -11,7 +11,13 @@
   width: 100%;
 }
 
-.favorite {
-  width: 24px;
-  height: 24px;
+.card h2 {
+  padding: 0 1em;
 }
+
+.favorite {
+    width: 24px;
+    height: 24px;
+    margin: 0 1em;
+}
+
