@@ -9,20 +9,15 @@ import styles from "./Home.module.css";
 function Home() {
   return (
     <>
-      <Header />
       <Banner image="/images/banner-home.png" />
       <Title>
         <h1>Um lugar para salvar seus filmes</h1>
       </Title>
       <section className={styles.cards}>
         {films.map((film) => (
-          <Card
-            key={film.id}
-            {...film}
-          />
+          <Card key={film.id} {...film} />
         ))}
       </section>
-      <Footer />
     </>
   );
 }
