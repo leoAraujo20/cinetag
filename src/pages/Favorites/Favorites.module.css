@@ -1,5 +1,5 @@
 .cards {
   display: flex;
-  justify-content: space-around;
-  gap: 1em;
+  justify-content: flex-start;
+  gap: 24px;
 }
