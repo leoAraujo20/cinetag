@@ -1,10 +1,12 @@
 .card {
   width: 282px;
-  margin-top: 40px;
   background-color: var(--gray);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  padding-bottom: 16px;
+  text-align: center;
 }
 
 .coverImage {
@@ -12,12 +14,9 @@
 }
 
 .card h2 {
-  padding: 0 1em;
+  font-size: 22px;
 }
 
 .favorite {
-    width: 24px;
-    height: 24px;
-    margin: 0 1em;
+  width: 24px;
 }
-

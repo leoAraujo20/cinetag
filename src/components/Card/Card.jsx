@@ -5,7 +5,7 @@ function Card({ id, title, coverImage, link }) {
   return (
     <div className={styles.card}>
       <img src={coverImage} alt={title} className={styles.cover} />
-      <h2 className={styles.title}>{title}</h2>
+      <h2>{title}</h2>
       <img src={favoriteIcon} alt="Favorite" className={styles.favorite} />
     </div>
   );
