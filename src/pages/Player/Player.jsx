@@ -3,15 +3,22 @@ import styles from "./Player.module.css";
 import Title from "@/components/Title";
 import { useParams } from "react-router";
 import films from "@/mocks/db.json";
+import NotFound from "@/components/NotFound/NotFound";
 
 function Player() {
   const params = useParams();
   const film = films.find((film) => film.id === Number(params.id));
 
+  if (!film) {
+    return <NotFound />;
+  }
+
   return (
     <>
       <Banner image="/images/banner-player.png" />
-      <Title><h1>{film.title}</h1></Title>
+      <Title>
+        <h1>{film.title}</h1>
+      </Title>
       <section className={styles.player}>
         <iframe
           src={film.link}
