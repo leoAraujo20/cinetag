@@ -20,3 +20,12 @@
 .favorite {
   width: 24px;
 }
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  cursor: pointer;
+}
