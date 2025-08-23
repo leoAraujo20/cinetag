@@ -8,7 +8,9 @@ function Home() {
   const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    fetch("https://my-json-server.typicode.com/leoAraujo20/cinetag-fake-api/videos")
+    fetch(
+      "https://my-json-server.typicode.com/leoAraujo20/cinetag-fake-api/videos"
+    )
       .then((response) => response.json())
       .then((data) => setVideos(data));
   }, []);
@@ -20,8 +22,8 @@ function Home() {
         <h1>Um lugar para salvar seus filmes</h1>
       </Title>
       <section className={styles.cards}>
-        {videos.map((film) => (
-          <Card key={film.id} {...film} />
+        {videos.map((video) => (
+          <Card key={video.id} {...video} />
         ))}
       </section>
     </>
