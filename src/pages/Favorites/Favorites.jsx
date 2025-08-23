@@ -14,8 +14,8 @@ function Favorites() {
         <h1>Meus favoritos</h1>
       </Title>
       <section className={styles.cards}>
-        {favorites.map((film) => (
-          <Card key={film.id} {...film} />
+        {favorites.map((video) => (
+          <Card key={video.id} {...video} />
         ))}
       </section>
     </>
