@@ -2,12 +2,12 @@ import Banner from "@/components/Banner";
 import styles from "./Player.module.css";
 import Title from "@/components/Title";
 import { useParams } from "react-router";
-import films from "@/mocks/db.json";
+import videos from "@/mocks/db.json";
 import NotFound from "@/components/NotFound/NotFound";
 
 function Player() {
   const params = useParams();
-  const film = films.find((film) => film.id === Number(params.id));
+  const film = videos.find((film) => film.id === Number(params.id));
 
   if (!film) {
     return <NotFound />;
