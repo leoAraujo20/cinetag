@@ -2,14 +2,24 @@ import Banner from "@/components/Banner";
 import styles from "./Player.module.css";
 import Title from "@/components/Title";
 import { useParams } from "react-router";
-import videos from "@/mocks/db.json";
 import NotFound from "@/components/NotFound/NotFound";
+import { useEffect, useState } from "react";
 
 function Player() {
   const params = useParams();
-  const film = videos.find((film) => film.id === Number(params.id));
+  const [video, setVideo] = useState();
 
-  if (!film) {
+  useEffect(() => {
+    fetch(
+      `https://my-json-server.typicode.com/leoAraujo20/cinetag-fake-api/videos?id=${params.id}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        setVideo(...data)
+      });
+  }, [params.id]);
+
+  if (!video) {
     return <NotFound />;
   }
 
@@ -17,15 +27,14 @@ function Player() {
     <>
       <Banner image="/images/banner-player.png" />
       <Title>
-        <h1>{film.title}</h1>
+        <h1>{video.title}</h1>
       </Title>
       <section className={styles.player}>
         <iframe
-          src={film.link}
-          title={film.title}
-          frameborder="0"
+          src={video.link}
+          title={video.title}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
+          allowFullScreen
         ></iframe>
       </section>
     </>
